@@ -1,16 +1,33 @@
-# Modern Design System - Starter Template
+# Moments Writer
 
-Production-ready design system template with Claude Code + MCP integration for seamless design-to-code workflows.
+AI-powered obituary and memorial website creator using theme-configurable design system with Vite, vanilla web technologies, and Figma MCP integration.
+
+## 🎯 Project Overview
+
+**Mission**: Democratize the creation of exceptional obituaries and life stories through AI, offering a more meaningful, personalized experience.
+
+### Background
+
+Obituaries have remained largely unchanged for years and are often written without strong writing skills. With advancements in AI, we have a chance to disrupt and transform how we honor and remember loved ones.
+
+### Target Audience
+
+- **Funeral Directors**: Create or enhance obituaries using f1Connect Website Platform
+- **Immediate Families**: Craft personalized and meaningful tributes for their loved ones
+
+### Key Features
+
+1. **Create from Scratch**: AI generates personalized obituaries with minimal input
+2. **Rewrite & Enhance**: Upload existing obituaries for AI-powered improvements
+3. **Update & Recreate**: Revisit and update older obituaries with new information
+4. **Memorial Websites**: Auto-generate "moments sites" with photos, videos, guestbooks, and timelines
 
 ## 🚀 Quick Start
 
 ```bash
-# Clone & Rename
-git clone https://github.com/judenns/design-system-demo.git my-design-system
-cd my-design-system
-
-# Update remote origin (optional - for your own repo)
-git remote set-url origin https://github.com/yourusername/my-design-system.git
+# Clone repository
+git clone https://github.com/judenns/design-system-demo.git moment-writter
+cd moment-writter
 
 # Install & Start
 npm install
@@ -44,14 +61,15 @@ npm run clean              # Clean artifacts
 **How it works**: `theme.config.json` → `npm run theme` → All CSS variables updated automatically
 
 ### Quick Start
+
 ```json
 {
   "brand": {
-    "color": "#E54D2E"          // Your brand color
+    "color": "#E54D2E" // Your brand color
   },
   "colors": {
-    "text-dark": "#1f1f1f",     // Heading text
-    "bg-default": "#ffffff"      // Background
+    "text-dark": "#1f1f1f", // Heading text
+    "bg-default": "#ffffff" // Background
   },
   "typography": {
     "headings": { "h1": "4.5rem" } // Custom sizing
@@ -62,6 +80,7 @@ npm run clean              # Clean artifacts
 ### Usage Examples
 
 **Corporate Theme**:
+
 ```json
 {
   "brand": { "color": "#1E40AF" },
@@ -73,6 +92,7 @@ npm run clean              # Clean artifacts
 ```
 
 **Marketing Theme**:
+
 ```json
 {
   "brand": { "color": "#E54D2E" },
@@ -84,6 +104,7 @@ npm run clean              # Clean artifacts
 ```
 
 **SaaS Product Theme**:
+
 ```json
 {
   "brand": { "color": "#7C3AED" },
@@ -105,6 +126,7 @@ See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
 ## 🔧 MCP Integration - Supercharge Your Workflow
 
 **Why MCP?** Transform natural language into production code with zero hallucinations:
+
 - **Context7**: Access latest docs from official sources (React, Next.js, Tailwind, etc.)
 - **Figma MCP**: Convert designs to code instantly with design token sync
 - **Claude Code**: Natural language → validated patterns → clean implementation
@@ -122,11 +144,10 @@ See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
 
 ```bash
 # Context7 - Documentation Server
-npm install -g @context7/mcp-server
+claude mcp add --transport http context7 https://mcp.context7.com/mcp
 
-# Figma MCP - Design Integration
-npm install -g @figma/mcp-server
-# Token: Figma → Account Settings → Personal Access Tokens
+# Figma MCP Local Server  - Design Integration
+claude mcp add --transport http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp
 ```
 
 ## 🤖 Specialized Agents
@@ -134,8 +155,10 @@ npm install -g @figma/mcp-server
 Claude Code automatically activates the right agent based on your request. Each agent follows a specific workflow to ensure quality and consistency.
 
 ### 🎨 Front-End Agent
+
 **What it does**: Creates UI components following your design system patterns
 **Workflow**:
+
 1. **Context7 Lookup** (MANDATORY) - Gets latest documentation from official sources
 2. **Discover System** - Finds existing CSS variables and components
 3. **Figma Reference** - Uses design screenshots/metadata if available
@@ -149,8 +172,10 @@ Claude Code automatically activates the right agent based on your request. Each 
 ```
 
 ### 🎯 Figma Integration Agent
+
 **What it does**: Converts Figma designs into code that matches your design system
 **Workflow**:
+
 1. **Extract Design** - Gets screenshots, measurements, and design tokens from Figma
 2. **Check System** - Compares with existing CSS variables and theme config
 3. **Propose Updates** - Suggests theme.config.json changes instead of direct CSS edits
@@ -164,8 +189,10 @@ Claude Code automatically activates the right agent based on your request. Each 
 ```
 
 ### 📚 Doc-Writer Agent
+
 **What it does**: Keeps documentation current with your codebase changes
 **Workflow**:
+
 1. **Discover Changes** - Scans for new components or system updates
 2. **Verify Examples** - Tests that all code examples actually work
 3. **Update Docs** - Syncs documentation with current codebase
@@ -179,8 +206,10 @@ Claude Code automatically activates the right agent based on your request. Each 
 ```
 
 ### ✅ QA Agent
+
 **What it does**: Validates code quality, accessibility, and design system consistency
 **Workflow**:
+
 1. **System Scan** - Uses tools to find potential issues in CSS/HTML
 2. **Theme Validation** - Checks theme.config.json sync with CSS variables
 3. **Accessibility Audit** - Validates WCAG compliance and keyboard navigation
@@ -194,8 +223,10 @@ Claude Code automatically activates the right agent based on your request. Each 
 ```
 
 ### ⚙️ General-Purpose Agent
+
 **What it does**: Handles complex multi-step tasks and research
 **Workflow**:
+
 1. **Task Analysis** - Breaks down complex requests into steps
 2. **Research** - Gathers information using Context7 and web search
 3. **Plan Creation** - Develops structured approach
@@ -231,6 +262,7 @@ scripts/                     # Theme automation
 ## 🎯 Real-World Use Cases
 
 ### Context7 MCP - Documentation-First Development
+
 ```bash
 # Get verified, up-to-date patterns
 "Get the latest CSS Grid documentation"
@@ -241,6 +273,7 @@ scripts/                     # Theme automation
 ```
 
 ### Figma MCP - Design-to-Code Pipeline
+
 ```bash
 # From Figma URL to production code
 "Show me the header component from [figma-url]"
@@ -252,6 +285,7 @@ scripts/                     # Theme automation
 ```
 
 ### Claude Code - Natural Language Interface
+
 ```bash
 "Create a responsive dashboard layout using our variables"
 "Add dark mode support to all components"
@@ -269,8 +303,199 @@ scripts/                     # Theme automation
 ## 🛠 Architecture
 
 **Clean & Modern**:
+
 - Pure vanilla HTML5, CSS3, JavaScript
 - Vite 7.x build system with instant hot reload
 - Zero runtime dependencies (only `vite` dev dependency)
 - Token-based design system with automated theme updates
 - BEM methodology for consistent CSS architecture
+
+## 🎬 Demo Creation Process
+
+This demo showcases how Claude Code with MCP integration creates production-quality design systems through natural language. Here's the complete workflow:
+
+### Phase 1: Foundation Setup
+
+**Theme System Architecture**:
+```bash
+# Natural language request
+"Create a theme configuration system that:
+- Uses JSON config as single source of truth
+- Generates CSS variables automatically
+- Updates all components instantly
+- Supports complete brand customization"
+
+# Claude Code:
+1. Designs theme.config.json schema
+2. Creates update-theme.js automation script
+3. Generates CSS variable system
+4. Adds npm scripts for workflow integration
+```
+
+**Design System Foundation**:
+```bash
+# Request
+"Build a scalable CSS architecture with:
+- BEM naming for components
+- CSS custom properties for theming
+- Responsive design utilities
+- Accessibility-first approach"
+
+# Claude Code:
+1. Structures style/ directory
+2. Creates reset.css and global.css
+3. Implements variable system
+4. Builds component library
+```
+
+### Phase 2: Component Development with MCP
+
+**Context7 Integration** (Documentation-First):
+```bash
+# Request
+"Create accessible button components following web standards"
+
+# Front-End Agent workflow:
+1. **Context7 Lookup**: Fetches WCAG button patterns from /w3c/aria-practices
+2. **Discovery**: Analyzes existing CSS variables in theme config
+3. **Implementation**: Creates buttons.css with proper ARIA
+4. **Validation**: Ensures keyboard navigation and focus states
+```
+
+**Figma MCP Integration** (Design-to-Code):
+```bash
+# Request with Figma URL
+"Generate form components matching this Figma design"
+
+# Figma Integration Agent workflow:
+1. **Extract Design**: Gets screenshots and measurements via get_code
+2. **Token Mapping**: Compares Figma variables with CSS variables
+3. **Propose Updates**: Suggests theme.config.json changes
+4. **Generate Code**: Creates forms.css using design system patterns
+5. **Link Components**: Maps Figma → code via add_code_connect_map
+```
+
+### Phase 3: Documentation & Quality
+
+**Automated Documentation**:
+```bash
+# Request
+"Create comprehensive documentation for the design system"
+
+# Doc-Writer Agent workflow:
+1. **Component Discovery**: Scans style/ directory
+2. **Extract Patterns**: Identifies BEM naming and variable usage
+3. **Generate Examples**: Creates live code examples
+4. **Usage Guide**: Documents theme configuration workflow
+```
+
+**Quality Assurance**:
+```bash
+# Request
+"Audit the design system for accessibility and performance"
+
+# QA Agent workflow:
+1. **Accessibility Scan**: Validates WCAG 2.1 AA compliance
+2. **Theme Validation**: Checks theme.config.json sync
+3. **Performance Check**: Reviews CSS architecture and load times
+4. **Standards Audit**: Ensures BEM consistency
+```
+
+### Phase 4: Real-World Application
+
+**Multi-Component Page Creation**:
+```bash
+# Single natural language request
+"Build a landing page with hero, features section, and CTA"
+
+# Claude Code orchestrates:
+1. Front-End Agent: Creates layout structure
+2. Context7: Gets responsive design patterns
+3. Figma Agent: Matches designs if URL provided
+4. QA Agent: Validates accessibility
+5. Doc-Writer: Updates component documentation
+```
+
+### Key Demo Features
+
+**1. Theme Configuration System**:
+- Edit `theme.config.json` → Run `npm run theme` → Instant visual update
+- Demonstrates single source of truth architecture
+- Shows automated CSS variable generation
+
+**2. MCP-Powered Development**:
+- **Context7**: Zero hallucinations via official documentation
+- **Figma MCP**: Design-to-code with token synchronization
+- **Agent Coordination**: Specialized agents work together
+
+**3. Production Quality Output**:
+- Semantic HTML with proper landmarks
+- Accessible components (WCAG 2.1 AA)
+- Responsive design with mobile-first approach
+- Optimized CSS with BEM methodology
+
+**4. Developer Experience**:
+- Natural language interface for all operations
+- Instant feedback via Vite hot reload
+- Automated workflows (theme updates, builds)
+- Clear documentation with live examples
+
+### Demo Script
+
+**5-Minute Walkthrough**:
+
+```bash
+# 1. Show theme configuration (30s)
+"Let me show you our theme system - edit theme.config.json, run npm run theme"
+
+# 2. Demonstrate MCP integration (1m)
+"Create a pricing card component"
+# Watch as Context7 fetches patterns, Figma provides designs, code generates
+
+# 3. Show component consistency (1m)
+"Notice how all components automatically match the theme"
+# Browse design-system.html to see unified styling
+
+# 4. Update theme in real-time (30s)
+# Change brand color in theme.config.json
+npm run theme
+# All components update instantly
+
+# 5. Show documentation quality (1m)
+# Open docs/ to show auto-generated guides
+# Demonstrate live code examples
+```
+
+### Technical Highlights
+
+**What Makes This Demo Special**:
+
+1. **Zero Runtime Dependencies**: Pure vanilla web technologies
+2. **Automated Theme System**: JSON config → CSS variables
+3. **MCP Integration**: Documentation-first development workflow
+4. **Agent Orchestration**: Specialized agents coordinate automatically
+5. **Production Ready**: Accessibility, performance, maintainability
+
+**Commands Used in Demo**:
+```bash
+npm install              # One-time setup
+npm run dev              # Live development
+npm run dev:style        # Component showcase
+npm run theme            # Apply configuration
+npm run build            # Production build
+```
+
+### Lessons Learned
+
+**Best Practices Demonstrated**:
+- Single source of truth for design tokens
+- Automated workflows reduce manual errors
+- MCP servers prevent documentation drift
+- Specialized agents ensure quality at every step
+- Natural language interface accelerates development
+
+**Scalability Proven**:
+- Theme system scales to enterprise applications
+- Component library grows without architectural changes
+- MCP integration adapts to any tech stack
+- Agent coordination handles increasing complexity
