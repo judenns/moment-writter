@@ -10,24 +10,28 @@ The theme configuration system lets you customize the entire design system throu
 
 ## Configuration Structure
 
+**Source**: [`theme.config.json`](../theme.config.json)
+
+The configuration file contains all customizable design tokens:
+
 ```json
 {
   "brand": {
-    "color": "#E54D2E"          // Primary brand color
+    "color": "#000bff"          // Primary brand color
   },
   "colors": {
-    "text-dark": "#1f1f1f",     // Headings & emphasis
+    "text-dark": "#111111",     // Headings & emphasis
     "text-default": "#525252",  // Body text
-    "text-light": "#8c8c8c",    // Secondary text
+    "text-light": "#999999",    // Secondary text
     "bg-default": "#ffffff",    // Main background
-    "border-default": "#bbb"    // Default borders
+    "border-default": "#e1e0f0" // Default borders
   },
   "typography": {
     "heading-font": "Inter",    // Heading font
     "body-font": "Inter",       // Body font
     "headings": {
       "h1": "4.5rem",          // Display size
-      "h2": "3.75rem"          // Page titles
+      "h2": "2rem"             // Page titles
     }
   },
   "components": {
@@ -43,6 +47,8 @@ The theme configuration system lets you customize the entire design system throu
 }
 ```
 
+**Current values**: See [`theme.config.json`](../theme.config.json) for all configuration options.
+
 ## What Gets Updated
 
 The `npm run theme` command updates CSS variables in:
@@ -54,7 +60,12 @@ The `npm run theme` command updates CSS variables in:
 
 ## Example Customizations
 
+**Source**: [`theme.config.json`](../theme.config.json)
+
 ### Change Brand Color to Blue
+
+Edit `brand.color` in your theme configuration:
+
 ```json
 {
   "brand": {
@@ -64,6 +75,9 @@ The `npm run theme` command updates CSS variables in:
 ```
 
 ### Full Brand Color Customization
+
+Customize brand color and component-specific overrides:
+
 ```json
 {
   "brand": {
@@ -81,6 +95,9 @@ The `npm run theme` command updates CSS variables in:
 ```
 
 ### Change Font to Roboto
+
+Update typography configuration:
+
 ```json
 {
   "typography": {
@@ -91,6 +108,9 @@ The `npm run theme` command updates CSS variables in:
 ```
 
 ### Make Buttons Taller
+
+Adjust button size configuration:
+
 ```json
 {
   "components": {
@@ -111,15 +131,27 @@ The `npm run theme` command updates CSS variables in:
 }
 ```
 
+**Current values**: See [`theme.config.json`](../theme.config.json) → `components.button.size`
+
 ## How Theme Updates Work
+
+**Source**: [`scripts/update-theme.js`](../scripts/update-theme.js)
 
 **Cascade System**: Theme changes flow through the CSS variable architecture:
 
-1. `theme.config.json` values update primitive variables (`--brand-700`, `--neutral-500`)
-2. Semantic variables automatically inherit changes (`--txt-brand: var(--brand-700)`)
+1. `theme.config.json` values update primitive variables in `style/variables/colors.css`
+2. Semantic variables automatically inherit changes (e.g., `--txt-brand: var(--brand-700)`)
 3. Components use semantic variables, staying in sync automatically
 
+**Generated CSS files**:
+- `style/variables/colors.css` - Color tokens
+- `style/variables/typography.css` - Font families and sizes
+- `style/components/buttons.css` - Button variants
+- `style/components/forms.css` - Input sizes
+
 ## Button Variant Configuration
+
+**Source**: [`theme.config.json`](../theme.config.json) → `components.button`
 
 Each button variant (primary, tonal, outline, link) can be customized with:
 
@@ -129,6 +161,8 @@ Each button variant (primary, tonal, outline, link) can be customized with:
 - `hover-text-color`: Text color when hovering
 - `hover-background-color`: Background color when hovering
 - `hover-border-color`: Border color when hovering
+
+**Current button configuration**: See [`theme.config.json`](../theme.config.json) → `components.button` for all variant options.
 
 ## Tips
 

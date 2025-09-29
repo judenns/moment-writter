@@ -365,13 +365,18 @@ claude mcp add --transport http figma-dev-mode-mcp-server http://127.0.0.1:3845/
 
 ## Integration with Design System Theme Configuration
 
+**Source**: [`theme.config.json`](../theme.config.json) → [`scripts/update-theme.js`](../scripts/update-theme.js) → [`style/variables/`](../style/variables/)
+
 This project includes automated theme configuration that works seamlessly with Figma Dev Mode MCP Server.
 
 ### Smart Variable Integration
+
+**Source**: [`style/variables/colors.css`](../style/variables/colors.css) for CSS variable definitions
+
 Claude Code automatically maps Figma design tokens to your existing CSS custom properties:
 
 ```css
-/* Figma Color: Primary/600 (#E54D2E) */
+/* Figma Color: Primary/600 */
 /* Instead of hard-coded values: */
 background-color: #E54D2E;
 
@@ -381,7 +386,11 @@ color: var(--txt-on-brand);
 padding: var(--space-md) var(--space-lg);
 ```
 
+**Current CSS variables**: See [`style/variables/colors.css`](../style/variables/colors.css) for all available design tokens.
+
 ### Complete Design-to-Code Workflow
+
+**Source**: [`theme.config.json`](../theme.config.json) (configuration) → [`scripts/update-theme.js`](../scripts/update-theme.js) (automation) → [`style/variables/`](../style/variables/) (output)
 
 **1. Extract Design Tokens**
 ```bash
@@ -392,25 +401,30 @@ padding: var(--space-md) var(--space-lg);
 **2. Generate Theme Configuration**
 ```bash
 "Update our theme.config.json with these Figma variables"
-# → Creates theme configuration file
+# → Updates theme.config.json with extracted tokens
 ```
+
+**Current configuration**: See [`theme.config.json`](../theme.config.json) for existing design tokens.
 
 **3. Apply Theme System**
 ```bash
 "Apply the updated theme configuration"
 # → Runs: npm run theme
+# → Updates: style/variables/colors.css, typography.css, buttons.css, forms.css
 ```
 
 **4. Generate Components**
 ```bash
 "Create React components using our updated design system variables"
-# → Generates components that automatically use new theme
+# → Generates components that automatically use CSS variables from style/variables/
 ```
 
 ### Design System Synchronization
 
-**Figma → CSS Variables → Components**
-- Figma design tokens are automatically mapped to CSS custom properties
+**Workflow**: Figma → [`theme.config.json`](../theme.config.json) → [`scripts/update-theme.js`](../scripts/update-theme.js) → [`style/variables/`](../style/variables/) → Components
+
+- Figma design tokens are mapped to `theme.config.json`
+- Theme script generates CSS custom properties in `style/variables/`
 - Component code uses semantic variable names, not hard-coded values
 - Theme changes propagate to all components automatically
 - Maintains design-code consistency across entire system
@@ -420,17 +434,17 @@ padding: var(--space-md) var(--space-lg);
 # 1. Select design system colors page in Figma
 "Extract color variables and update our theme configuration"
 
-# 2. Apply theme changes
+# 2. Apply theme changes (updates CSS files)
 "Run the theme update process"
 
 # 3. Generate new component with updated theme
 "Create a pricing card component using the updated design system"
 
-# Result: Component uses new colors automatically via CSS variables
+# Result: Component uses CSS variables from style/variables/colors.css
 ```
 
 ### Benefits
-- **Automatic Mapping**: Figma variables → CSS custom properties
-- **Theme Flexibility**: Easy brand customization via theme.config.json
-- **Component Consistency**: All generated components use design system tokens
-- **Maintainability**: Single source of truth for design values
+- **Automatic Mapping**: Figma variables → `theme.config.json` → CSS custom properties in `style/variables/`
+- **Theme Flexibility**: Easy brand customization via [`theme.config.json`](../theme.config.json)
+- **Component Consistency**: All generated components use design system tokens from `style/variables/`
+- **Maintainability**: Single source of truth at [`theme.config.json`](../theme.config.json) for design values

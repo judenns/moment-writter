@@ -6,11 +6,13 @@ A modern, neutral design system built with semantic CSS variables and strategic 
 
 ### Color System
 
+**Source**: [`style/variables/colors.css`](../style/variables/colors.css) (generated from [`theme.config.json`](../theme.config.json))
+
 Semantic color system built with CSS custom properties, emphasizing neutrals with strategic brand color usage.
 
 #### Philosophy
 - **Neutral Foundation**: Grays for 90% of UI elements
-- **Strategic Brand Usage**: Brand color (`var(--brand-700)`) for primary actions only
+- **Strategic Brand Usage**: Brand color for primary actions only
 - **Accessible Contrast**: All color combinations meet WCAG AA standards
 - **Semantic Naming**: Color variables describe usage, not appearance
 - **Layered Variables**: Primitive colors → semantic variables → components
@@ -18,20 +20,27 @@ Semantic color system built with CSS custom properties, emphasizing neutrals wit
 
 #### CSS Variable Architecture
 
+**Source**: [`theme.config.json`](../theme.config.json) → [`scripts/update-theme.js`](../scripts/update-theme.js) → [`style/variables/colors.css`](../style/variables/colors.css)
+
 **Three-Layer System**:
 
-1. **Primitive Variables**: Base color palette (`--brand-700: #E54D2E`, `--neutral-500: #8c8c8c`)
-2. **Semantic Variables**: Usage-based references (`--txt-brand: var(--brand-700)`, `--bg-light: var(--neutral-50)`)
+1. **Primitive Variables**: Base color palette defined in `theme.config.json` → `brand.color`
+2. **Semantic Variables**: Usage-based references (e.g., `--txt-brand: var(--brand-700)`)
 3. **Component Variables**: Component-specific values that reference semantic variables
 
-This architecture ensures that theme updates cascade properly: when you change `brand.color` in `theme.config.json`, it updates the primitive `--brand-700`, which automatically updates all semantic variables that reference it (`--txt-brand`, `--bg-brand`, `--bd-brand`), which in turn updates all components.
+This architecture ensures that theme updates cascade properly: when you change `brand.color` in `theme.config.json`, it updates the primitive variables, which automatically update all semantic variables, which in turn update all components.
+
+**Current values**: See [`style/variables/colors.css`](../style/variables/colors.css) for generated CSS variables.
 
 #### Text Colors
+
+**Source**: [`style/variables/colors.css`](../style/variables/colors.css)
+
 ```css
 --txt-dark: var(--neutral-800);     /* Primary headings, bold text */
 --txt-default: var(--neutral-600);  /* Body text, regular content */
 --txt-light: var(--neutral-500);    /* Secondary text, subtitles */
---txt-brand: var(--brand-700);      /* Brand text (#000BFF) - primary actions */
+--txt-brand: var(--brand-700);      /* Brand text - primary actions */
 --txt-white: #ffffff;               /* Text on dark backgrounds */
 --txt-success: var(--success-700);  /* Success messages */
 --txt-error: var(--error-700);      /* Error messages */
@@ -39,11 +48,16 @@ This architecture ensures that theme updates cascade properly: when you change `
 --txt-disable: var(--neutral-400);  /* Disabled text */
 ```
 
+**Current values**: See [`style/variables/colors.css`](../style/variables/colors.css) for generated values.
+
 #### Background Colors
+
+**Source**: [`style/variables/colors.css`](../style/variables/colors.css)
+
 ```css
 --bg-default: #ffffff;              /* Default page background */
 --bg-white: #ffffff;                /* Cards, modal backgrounds */
---bg-brand: var(--brand-700);       /* Primary brand background (#000BFF) */
+--bg-brand: var(--brand-700);       /* Primary brand background */
 --bg-brand-light: var(--brand-100); /* Light brand tints */
 --bg-light: var(--neutral-50);      /* Subtle section backgrounds */
 --bg-success: var(--success-700);   /* Success states */
@@ -51,26 +65,43 @@ This architecture ensures that theme updates cascade properly: when you change `
 --bg-error: var(--error-700);       /* Error states */
 ```
 
+**Current values**: See [`style/variables/colors.css`](../style/variables/colors.css) for generated values.
+
 #### Border Colors
+
+**Source**: [`style/variables/colors.css`](../style/variables/colors.css)
+
 ```css
 --bd-default: var(--neutral-200);   /* Default borders */
---bd-brand: var(--brand-700);       /* Brand borders (#000BFF) */
+--bd-brand: var(--brand-700);       /* Brand borders */
 --bd-success: var(--success-700);   /* Success borders */
 --bd-error: var(--error-700);       /* Error borders */
 --bd-warning: var(--warning-700);   /* Warning borders */
 --bd-white: #ffffff;                /* White borders */
 ```
 
+**Current values**: See [`style/variables/colors.css`](../style/variables/colors.css) for generated values.
+
 ### Typography
 
+**Source**: [`style/variables/typography.css`](../style/variables/typography.css) (generated from [`theme.config.json`](../theme.config.json))
+
 #### Font Families
+
+**Source**: [`theme.config.json`](../theme.config.json) → `typography.heading-font`, `typography.body-font`
+
 ```css
 --font-family-base: 'Inter', system-ui, sans-serif;  /* Primary font stack */
 --heading-font: var(--font-family-base);             /* Consistent typography */
 --body-font: var(--font-family-base);                /* Unified font system */
 ```
 
+**Current values**: See [`theme.config.json`](../theme.config.json) → `typography` for font configuration.
+
 #### Font Sizes (Type Scale)
+
+**Source**: [`theme.config.json`](../theme.config.json) → `typography.headings`, `typography.body`
+
 ```css
 --fs-h1: 4.5rem;    /* 72px - Hero headings */
 --fs-h2: 3.75rem;   /* 60px - Page headings */
@@ -85,7 +116,12 @@ This architecture ensures that theme updates cascade properly: when you change `
 --fs-label: 0.875rem; /* 14px - Form labels */
 ```
 
+**Current values**: See [`style/variables/typography.css`](../style/variables/typography.css) for generated font sizes.
+
 #### Font Weights
+
+**Source**: [`style/variables/typography.css`](../style/variables/typography.css)
+
 ```css
 --fw-default: 400;    /* Normal body text */
 --fw-medium: 500;     /* Slightly emphasized text */
@@ -96,6 +132,8 @@ This architecture ensures that theme updates cascade properly: when you change `
 ```
 
 ### Spacing Scale
+
+**Source**: [`style/variables/spacing.css`](../style/variables/spacing.css)
 
 Consistent spacing system based on rem units for scalability:
 
@@ -110,6 +148,8 @@ Consistent spacing system based on rem units for scalability:
 --space-3xl: 4rem;      /* 64px - Triple extra large */
 --space-4xl: 6rem;      /* 96px - Maximum spacing */
 ```
+
+**Current values**: See [`style/variables/spacing.css`](../style/variables/spacing.css) for all spacing tokens.
 
 ### Border Radius
 
@@ -166,19 +206,23 @@ style/
 
 ### Buttons (`buttons.css`)
 
+**Source**: [`style/components/buttons.css`](../style/components/buttons.css) (configured via [`theme.config.json`](../theme.config.json) → `components.button`)
+
 Modern button system with comprehensive interactive states and accessibility features.
 
 **Variants**:
-- `btn--primary`: Brand color background (#000BFF), white text
+- `btn--primary`: Brand color background, white text
 - `btn--secondary-fill`: Neutral gray background, dark text
 - `btn--secondary-outline`: Transparent background, brand border
 - `btn--link`: Text-only, brand color, no background
 
 **Features**:
-- Consistent 44px minimum height (accessibility)
+- Consistent minimum height (accessibility) - see `theme.config.json` → `components.button.size`
 - Proper focus indicators with keyboard navigation
 - Disabled state handling
 - Hover and active state feedback
+
+**Current configuration**: See [`theme.config.json`](../theme.config.json) → `components.button` for button variants and sizes.
 
 ```html
 <!-- Primary Variants -->
@@ -192,6 +236,8 @@ Modern button system with comprehensive interactive states and accessibility fea
 ```
 
 ### Forms (`forms.css`)
+
+**Source**: [`style/components/forms.css`](../style/components/forms.css) (configured via [`theme.config.json`](../theme.config.json) → `components.input`)
 
 Comprehensive form system with accessibility, validation states, and Phosphor icon integration.
 
@@ -211,6 +257,8 @@ Comprehensive form system with accessibility, validation states, and Phosphor ic
 - Clear focus indicators
 - Error and validation states
 - Consistent spacing and alignment
+
+**Current configuration**: See [`theme.config.json`](../theme.config.json) → `components.input` for input sizes and styling.
 
 ```html
 <!-- Text Input -->

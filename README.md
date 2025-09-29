@@ -58,17 +58,19 @@ npm run clean              # Clean artifacts
 
 ## 🎨 Theme Configuration - Instant Brand Adaptation
 
-**How it works**: `theme.config.json` → `npm run theme` → All CSS variables updated automatically
+**Source**: [`theme.config.json`](./theme.config.json) → `npm run theme` → All CSS variables updated automatically
 
 ### Quick Start
+
+**Configuration file**: [`theme.config.json`](./theme.config.json)
 
 ```json
 {
   "brand": {
-    "color": "#E54D2E" // Your brand color
+    "color": "#000bff" // Your brand color
   },
   "colors": {
-    "text-dark": "#1f1f1f", // Heading text
+    "text-dark": "#111111", // Heading text
     "bg-default": "#ffffff" // Background
   },
   "typography": {
@@ -77,10 +79,15 @@ npm run clean              # Clean artifacts
 }
 ```
 
+**Current values**: See [`theme.config.json`](./theme.config.json) for all configuration options.
+
 ### Usage Examples
 
-**Corporate Theme**:
+**Source**: [`theme.config.json`](./theme.config.json)
 
+Edit the configuration file to match your brand:
+
+**Corporate Theme**:
 ```json
 {
   "brand": { "color": "#1E40AF" },
@@ -92,7 +99,6 @@ npm run clean              # Clean artifacts
 ```
 
 **Marketing Theme**:
-
 ```json
 {
   "brand": { "color": "#E54D2E" },
@@ -104,7 +110,6 @@ npm run clean              # Clean artifacts
 ```
 
 **SaaS Product Theme**:
-
 ```json
 {
   "brand": { "color": "#7C3AED" },
@@ -121,7 +126,13 @@ npm run theme
 
 **What gets updated**: All CSS custom properties in `style/variables/` match your theme instantly. Colors, typography, component styles - everything stays consistent across all components.
 
-See [Theme Guide](docs/theme-config-guide.md) for advanced customization.
+**Generated files**:
+- `style/variables/colors.css` - Color tokens
+- `style/variables/typography.css` - Font families and sizes
+- `style/components/buttons.css` - Button variants
+- `style/components/forms.css` - Input sizes
+
+See [Theme Configuration Guide](docs/theme-config-guide.md) for advanced customization.
 
 ## 🔧 MCP Integration - Supercharge Your Workflow
 
@@ -350,16 +361,32 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 
 ### Phase 2: Component Development with MCP
 
-**Context7 Integration** (Documentation-First):
+**Context7 Integration** (MANDATORY Documentation-First):
 ```bash
 # Request
 "Create accessible button components following web standards"
 
-# Front-End Agent workflow:
-1. **Context7 Lookup**: Fetches WCAG button patterns from /w3c/aria-practices
-2. **Discovery**: Analyzes existing CSS variables in theme config
-3. **Implementation**: Creates buttons.css with proper ARIA
-4. **Validation**: Ensures keyboard navigation and focus states
+# Front-End Agent MANDATORY workflow:
+1. **🛑 STOP**: Do NOT write code yet (MANDATORY)
+2. **Context7 Lookup**: Research patterns and best practices
+   - resolve-library-id → find /w3c/aria-practices
+   - get-library-docs → fetch WCAG button patterns
+   - Focus: vanilla JS, HTML5, ARIA, accessibility
+3. **Figma Reference**: Analyze design specifications
+   - get_screenshot → visual preview
+   - get_metadata → dimensions and spacing
+   - get_code → component structure
+4. **Pre-Implementation Checklist**: Validate 6 requirements
+   - Context7 lookup completed?
+   - Figma designs analyzed?
+   - Accessibility requirements identified?
+   - Design system variables identified?
+   - Form validation patterns reviewed?
+   - Keyboard navigation patterns reviewed?
+5. **Implementation**: NOW create buttons.css with proper ARIA
+6. **Validation**: Ensure keyboard navigation and focus states
+
+# Note: Skipping Context7 violates project rules - NO EXCEPTIONS
 ```
 
 **Figma MCP Integration** (Design-to-Code):
@@ -367,12 +394,18 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 # Request with Figma URL
 "Generate form components matching this Figma design"
 
-# Figma Integration Agent workflow:
-1. **Extract Design**: Gets screenshots and measurements via get_code
-2. **Token Mapping**: Compares Figma variables with CSS variables
-3. **Propose Updates**: Suggests theme.config.json changes
-4. **Generate Code**: Creates forms.css using design system patterns
-5. **Link Components**: Maps Figma → code via add_code_connect_map
+# Figma Integration workflow:
+1. **Extract Design**: Get visual and structural data
+   - get_screenshot → visual preview of selected frame
+   - get_metadata → dimensions, positioning, hierarchy
+   - get_code → component structure and styling
+2. **Token Mapping**: Compare Figma variables with CSS variables
+   - get_variable_defs → extract design tokens
+3. **Propose Updates**: Suggest theme.config.json changes
+4. **Generate Code**: Create forms.css using design system patterns
+5. **Link Components**: Map Figma → code via get_code_connect_map
+
+# Always: Select frame in Figma Desktop before requesting code generation
 ```
 
 ### Phase 3: Documentation & Quality
@@ -382,11 +415,12 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 # Request
 "Create comprehensive documentation for the design system"
 
-# Doc-Writer Agent workflow:
-1. **Component Discovery**: Scans style/ directory
-2. **Extract Patterns**: Identifies BEM naming and variable usage
-3. **Generate Examples**: Creates live code examples
-4. **Usage Guide**: Documents theme configuration workflow
+# Documentation workflow:
+1. **Component Discovery**: Scan style/ directory for all components
+2. **Extract Patterns**: Identify BEM naming and variable usage
+3. **Generate Examples**: Create live code examples with syntax highlighting
+4. **Usage Guide**: Document theme configuration workflow
+5. **Sync Check**: Ensure docs match actual implementation
 ```
 
 **Quality Assurance**:
@@ -394,11 +428,19 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 # Request
 "Audit the design system for accessibility and performance"
 
-# QA Agent workflow:
-1. **Accessibility Scan**: Validates WCAG 2.1 AA compliance
-2. **Theme Validation**: Checks theme.config.json sync
-3. **Performance Check**: Reviews CSS architecture and load times
-4. **Standards Audit**: Ensures BEM consistency
+# QA workflow:
+1. **Accessibility Scan**: Validate WCAG 2.1 AA compliance
+   - ARIA attributes present and correct
+   - Keyboard navigation functional
+   - Color contrast ratios ≥4.5:1
+   - Focus indicators visible
+2. **Theme Validation**: Check theme.config.json synchronization
+   - CSS variables match config
+   - All components use theme variables
+3. **Performance Check**: Review CSS architecture and load times
+   - Optimized selector specificity
+   - Minimal file size
+4. **Standards Audit**: Ensure BEM consistency across all components
 ```
 
 ### Phase 4: Real-World Application
@@ -408,12 +450,14 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 # Single natural language request
 "Build a landing page with hero, features section, and CTA"
 
-# Claude Code orchestrates:
-1. Front-End Agent: Creates layout structure
-2. Context7: Gets responsive design patterns
-3. Figma Agent: Matches designs if URL provided
-4. QA Agent: Validates accessibility
-5. Doc-Writer: Updates component documentation
+# Claude Code orchestrates specialized workflows:
+1. **Context7 Lookup**: Get responsive design patterns (MANDATORY first step)
+2. **Figma Integration**: Match designs if Figma URL provided
+3. **Front-End Implementation**: Create layout structure using design system
+4. **QA Validation**: Validate accessibility and performance
+5. **Documentation**: Update component documentation and examples
+
+# Note: Each component follows the MANDATORY Context7 → Figma → Implement workflow
 ```
 
 ### Key Demo Features
@@ -424,9 +468,13 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 - Shows automated CSS variable generation
 
 **2. MCP-Powered Development**:
-- **Context7**: Zero hallucinations via official documentation
+- **Context7 (MANDATORY)**: Zero hallucinations via official documentation lookup
+  - resolve-library-id + get-library-docs for accurate patterns
+  - Sources: /w3c/aria-practices, /jsebrech/plainvanilla, /mdn/content
 - **Figma MCP**: Design-to-code with token synchronization
-- **Agent Coordination**: Specialized agents work together
+  - get_screenshot, get_code, get_metadata, get_variable_defs
+  - Requires Figma Desktop with MCP server enabled
+- **Workflow Coordination**: Context7 → Figma → Implement → Validate
 
 **3. Production Quality Output**:
 - Semantic HTML with proper landmarks
@@ -450,7 +498,10 @@ This demo showcases how Claude Code with MCP integration creates production-qual
 
 # 2. Demonstrate MCP integration (1m)
 "Create a pricing card component"
-# Watch as Context7 fetches patterns, Figma provides designs, code generates
+# Watch the MANDATORY workflow:
+# → Context7 fetches accessibility patterns (resolve-library-id + get-library-docs)
+# → Figma provides visual design (get_screenshot + get_metadata)
+# → Code generates using design system variables
 
 # 3. Show component consistency (1m)
 "Notice how all components automatically match the theme"
@@ -470,11 +521,11 @@ npm run theme
 
 **What Makes This Demo Special**:
 
-1. **Zero Runtime Dependencies**: Pure vanilla web technologies
-2. **Automated Theme System**: JSON config → CSS variables
-3. **MCP Integration**: Documentation-first development workflow
-4. **Agent Orchestration**: Specialized agents coordinate automatically
-5. **Production Ready**: Accessibility, performance, maintainability
+1. **Zero Runtime Dependencies**: Pure vanilla web technologies (HTML, CSS, JS)
+2. **Automated Theme System**: theme.config.json → npm run theme → CSS variables
+3. **MANDATORY MCP Integration**: Context7 documentation-first workflow prevents hallucinations
+4. **Workflow Orchestration**: Context7 → Figma → Implement → Validate pipeline
+5. **Production Ready**: WCAG 2.1 AA accessibility, optimized performance, maintainable architecture
 
 **Commands Used in Demo**:
 ```bash
@@ -488,14 +539,16 @@ npm run build            # Production build
 ### Lessons Learned
 
 **Best Practices Demonstrated**:
-- Single source of truth for design tokens
-- Automated workflows reduce manual errors
-- MCP servers prevent documentation drift
-- Specialized agents ensure quality at every step
-- Natural language interface accelerates development
+- **Single Source of Truth**: theme.config.json controls all design tokens
+- **Automated Workflows**: npm run theme reduces manual CSS updates
+- **Documentation-First Development**: MANDATORY Context7 lookup prevents hallucinations
+- **Design-Code Synchronization**: Figma MCP ensures pixel-perfect implementation
+- **Quality Gates**: Accessibility, performance, and standards validation at every step
+- **Natural Language Interface**: Complex workflows via simple conversational requests
 
 **Scalability Proven**:
-- Theme system scales to enterprise applications
-- Component library grows without architectural changes
-- MCP integration adapts to any tech stack
-- Agent coordination handles increasing complexity
+- **Theme System**: Scales from 5 to 500+ components without architectural changes
+- **Component Library**: BEM methodology and CSS variables enable unlimited growth
+- **MCP Integration**: Context7 + Figma workflow adapts to any tech stack (React, Vue, vanilla)
+- **Workflow Orchestration**: MANDATORY Context7 → Figma → Implement pipeline handles increasing complexity
+- **Documentation Sync**: Automated docs generation keeps pace with component growth
