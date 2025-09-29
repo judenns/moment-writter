@@ -1,0 +1,128 @@
+{
+  "project": {
+    "name": "Moments Writer Design System"
+  },
+
+  "brand": {
+    "color": "#000bff"
+  },
+
+  "colors": {
+    "text-dark": "#111111",
+    "text-default": "#525252",
+    "text-light": "#999999",
+    "text-disable": "#bbb",
+    "bg-default": "#ffffff",
+    "bg-light": "#f5f5ff",
+    "bg-white": "#ffffff",
+    "bg-brand-light": "#e6e6ff",
+    "border-default": "#e1e0f0",
+    "border-light": "#e1e0f0"
+  },
+  
+  "typography": {
+    "heading-font": "Inter",
+    "body-font": "Inter",
+    "display-font": "Inter",
+    "headings": {
+      "h1": "4.5rem",
+      "h2": "2rem",
+      "h3": "1.5rem",
+      "h4": "1.25rem",
+      "h5": "1.125rem",
+      "h6": "1rem"
+    },
+    "body": {
+      "large": "1rem",
+      "default": "0.875rem",
+      "small": "0.75rem"
+    },
+    "label": "0.875rem",
+    "caption": "0.75rem",
+    "step": "0.75rem"
+  },
+  
+  "components": {
+    "button": {
+      "size": {
+        "small": {
+          "height": "44px",
+          "font-size": "0.875rem"
+        },
+        "default": {
+          "height": "56px",
+          "font-size": "1rem"
+        },
+        "large": {
+          "height": "56px",
+          "font-size": "1rem"
+        }
+      },
+
+      "primary": {
+        "background-color": "#000bff",
+        "text-color": "#ffffff",
+        "hover-background-color": "#0008cc",
+        "hover-text-color": "#ffffff"
+      },
+
+      "secondary": {
+        "background-color": "#ffffff",
+        "text-color": "#959595",
+        "border-color": "transparent",
+        "hover-background-color": "#f5f5f5",
+        "hover-text-color": "#959595"
+      },
+
+      "tonal": {
+        "background-color": "#e6e6ff",
+        "border-color": "transparent",
+        "hover-background-color": "#d4d4ff",
+        "hover-border-color": "transparent"
+      },
+
+      "outline": {
+        "background-color": "transparent",
+        "hover-background-color": "#e6e6ff"
+      },
+
+      "link": {
+        "background-color": "transparent",
+        "border-color": "transparent",
+        "hover-background-color": "transparent",
+        "hover-border-color": "transparent"
+      }
+    },
+
+    "input": {
+      "size": {
+        "small": {
+          "height": "46px",
+          "font-size": "0.875rem"
+        },
+        "default": {
+          "height": "46px",
+          "font-size": "0.875rem"
+        },
+        "large": {
+          "height": "56px",
+          "font-size": "1rem"
+        }
+      },
+      "border-radius": "8px",
+      "padding": "12px"
+    },
+
+    "card": {
+      "max-width": "680px",
+      "padding": "48px",
+      "border-radius": "32px",
+      "gap": "32px"
+    },
+
+    "progress": {
+      "height": "4px",
+      "border-radius": "2px"
+    }
+  }
+}

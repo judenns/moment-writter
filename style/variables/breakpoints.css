@@ -1,0 +1,16 @@
+/* Design System Breakpoints */
+:root {
+  /* Breakpoint Values */
+
+  /* Mobile-first breakpoint values */
+  --bp-mobile: 480px;     /* Mobile phones */
+  --bp-tablet: 768px;     /* Tablets */
+  --bp-desktop: 1024px;   /* Desktop */
+  --bp-large: 1200px;     /* Large screens */
+
+  /* Container max-widths */
+  --container-mobile: 100%;
+  --container-tablet: 768px;
+  --container-desktop: 1024px;
+  --container-large: 1200px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moments Writer - Create a Meaningful Tribute</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" />
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/global.css">
+  <link rel="stylesheet" href="style/variables/variables.css">
+  <link rel="stylesheet" href="style/components/components.css">
+  <link rel="stylesheet" href="style/components/multi-step-form.css">
+  <link rel="stylesheet" href="style/pages/index.css">
+</head>
+
+<body class="multi-step-form-page">
+  <!-- Header -->
+  <header class="form-header">
+    <button class="form-header__back" aria-label="Go back">
+      <i class="ph-bold ph-caret-left"></i>
+    </button>
+
+    <div class="form-header__brand">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2L17.09 10.26L26 13.35L17.09 16.44L14 24.7L10.91 16.44L2 13.35L10.91 10.26L14 2Z" fill="#000BFF"/>
+      </svg>
+      <span class="form-header__title">Storywriter</span>
+    </div>
+
+    <div class="form-header__progress" role="progressbar" aria-valuenow="14.28" aria-valuemin="0" aria-valuemax="100" aria-label="Step 1 of 7">
+      <div class="form-header__progress-bar" style="width: 14.28%"></div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="form-main">
+    <div id="step-container">
+      <!-- Dynamic step content will be injected here -->
+    </div>
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="form-footer">
+    <button type="button" class="btn btn--secondary" id="back-btn">Back</button>
+    <div class="form-footer__spacer"></div>
+    <button type="button" class="btn btn--primary btn--large" id="next-btn">Next</button>
+  </footer>
+
+  <!-- Date Picker Modal -->
+  <div class="date-picker-overlay" id="date-picker-overlay" hidden>
+    <div class="date-picker" id="date-picker" role="dialog" aria-modal="true" aria-labelledby="date-picker-title">
+      <div class="date-picker__header">
+        <h2 class="date-picker__title" id="date-picker-title">Select Date</h2>
+        <button type="button" class="date-picker__close" aria-label="Close date picker">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+
+      <div class="date-picker__navigation">
+        <button type="button" class="date-picker__nav-btn" data-action="prev-year" aria-label="Previous year">
+          <i class="ph-bold ph-caret-double-left"></i>
+        </button>
+        <button type="button" class="date-picker__nav-btn" data-action="prev-month" aria-label="Previous month">
+          <i class="ph-bold ph-caret-left"></i>
+        </button>
+        <div class="date-picker__current-month" id="current-month">January 2024</div>
+        <button type="button" class="date-picker__nav-btn" data-action="next-month" aria-label="Next month">
+          <i class="ph-bold ph-caret-right"></i>
+        </button>
+        <button type="button" class="date-picker__nav-btn" data-action="next-year" aria-label="Next year">
+          <i class="ph-bold ph-caret-double-right"></i>
+        </button>
+      </div>
+
+      <div class="date-picker__calendar">
+        <div class="date-picker__weekdays">
+          <div class="date-picker__weekday">Su</div>
+          <div class="date-picker__weekday">Mo</div>
+          <div class="date-picker__weekday">Tu</div>
+          <div class="date-picker__weekday">We</div>
+          <div class="date-picker__weekday">Th</div>
+          <div class="date-picker__weekday">Fr</div>
+          <div class="date-picker__weekday">Sa</div>
+        </div>
+        <div class="date-picker__days" id="calendar-days"></div>
+      </div>
+
+      <div class="date-picker__footer">
+        <button type="button" class="btn btn--link" data-action="today">Today</button>
+        <button type="button" class="btn btn--primary" data-action="select">Select</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/multi-step-form.js"></script>
+</body>
+</html>

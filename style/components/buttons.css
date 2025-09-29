@@ -1,0 +1,154 @@
+/* Button Components */
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: var(--fw-semibold);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  gap: 0.5rem;
+  height: 56px;
+  line-height: 60px;
+}
+
+.btn svg {
+  pointer-events: none;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Button Variants */
+.btn--primary {
+  background-color: var(--bg-brand);
+  color: var(--txt-white);
+  border-color: var(--bd-brand);
+  border-radius: 9999px;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--brand-800);
+  border-color: var(--brand-800);
+}
+
+.btn--secondary {
+  background-color: var(--bg-white);
+  color: var(--txt-light);
+  border-color: transparent;
+  border-radius: 9999px;
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--bg-light);
+  border-color: transparent;
+}
+
+.btn--tonal {
+  background-color: var(--brand-100);
+  color: var(--txt-brand);
+  border-color: transparent;
+}
+
+.btn--tonal:hover:not(:disabled) {
+  background-color: var(--brand-200);
+  border-color: transparent;
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--txt-brand);
+  border: 2px solid var(--bd-brand);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background-color: var(--brand-200);
+  border-color: transparent;
+}
+
+.btn--white {
+  background-color: var(--bg-default);
+  color: var(--txt-brand);
+  border-color: transparent;
+}
+
+.btn--white:hover:not(:disabled) {
+  background-color: var(--brand-50);
+}
+
+.btn--white-outline {
+  background-color: transparent;
+  color: var(--txt-white);
+  border-color: var(--bg-default);
+}
+
+.btn--white-outline:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn--link {
+  background-color: transparent;
+  color: var(--txt-brand);
+  border-color: transparent;
+  padding: 0;
+  height: auto;
+  min-width: auto;
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.btn--link:hover:not(:disabled) {
+  color: var(--brand-800);
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* Button Sizes */
+.btn--sm {
+  height: 44px;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn--lg {
+  height: 56px;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+}
+
+.btn--round {
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+/* Button Icons */
+.btn--icon-only {
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  min-width: auto;
+}
+
+.btn--icon-only svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System - Modern UI Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style/reset.css" />
+  <link rel="stylesheet" href="/style/global.css" />
+  <link rel="stylesheet" href="/style/variables/variables.css" />
+  <link rel="stylesheet" href="/style/components/components.css" />
+  <link rel="stylesheet" href="/style/pages/design-system.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="ds-header">
+    <div class="ds-container">
+      <h1 class="ds-title">Design System</h1>
+      <p class="ds-subtitle">Modern, accessible UI components built with CSS custom properties</p>
+      <nav class="ds-nav">
+        <a href="#colors" class="ds-nav-link">Colors</a>
+        <a href="#typography" class="ds-nav-link">Typography</a>
+        <a href="#components" class="ds-nav-link">Components</a>
+        <a href="#multi-step-form" class="ds-nav-link">Multi-Step Form</a>
+        <a href="index.html" class="ds-nav-link">← Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="ds-main">
+
+    <!-- Color System -->
+    <section id="colors" class="ds-section">
+      <div class="ds-container">
+
+        <!-- Primitive Colors -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Primitive Colors</h3>
+
+          <!-- Neutral Colors -->
+          <div class="ds-color-section">
+            <h4 class="ds-color-section-title">Neutral Scale</h4>
+            <div class="ds-color-row">
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-50);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-50</span>
+                  <span class="ds-color-value">#fafafa</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-100);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-100</span>
+                  <span class="ds-color-value">#f5f5f5</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-200);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-200</span>
+                  <span class="ds-color-value">#e5e5e5</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-300);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-300</span>
+                  <span class="ds-color-value">#e1e1e1</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-400);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-400</span>
+                  <span class="ds-color-value">#bbb</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-500);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-500</span>
+                  <span class="ds-color-value">#8c8c8c</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-600);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-600</span>
+                  <span class="ds-color-value">#555</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-700);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-700</span>
+                  <span class="ds-color-value">#525252</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-800);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-800</span>
+                  <span class="ds-color-value">#222</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--neutral-900);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">neutral-900</span>
+                  <span class="ds-color-value">#1f1f1f</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand Colors -->
+          <div class="ds-color-section">
+            <h4 class="ds-color-section-title">Brand Scale</h4>
+            <div class="ds-color-row">
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-50);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-50</span>
+                  <span class="ds-color-value">#FFF8F7</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-100);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-100</span>
+                  <span class="ds-color-value">#FEEBE7</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-200);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-200</span>
+                  <span class="ds-color-value">#FFDCD3</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-300);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-300</span>
+                  <span class="ds-color-value">#93c5fd</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-400);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-400</span>
+                  <span class="ds-color-value">#60a5fa</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-500);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-500</span>
+                  <span class="ds-color-value">#3b82f6</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-600);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-600</span>
+                  <span class="ds-color-value">#2563eb</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-700);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-700</span>
+                  <span class="ds-color-value">#E54D2E</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-800);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-800</span>
+                  <span class="ds-color-value">#c34127</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--brand-900);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">brand-900</span>
+                  <span class="ds-color-value">#05073d</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status Colors -->
+          <div class="ds-color-section">
+            <h4 class="ds-color-section-title">Success Colors</h4>
+            <div class="ds-color-row">
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--success-50);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">success-50</span>
+                  <span class="ds-color-value">#f0fdf4</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--success-500);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">success-500</span>
+                  <span class="ds-color-value">#22c55e</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--success-700);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">success-700</span>
+                  <span class="ds-color-value">#15803d</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-color-section">
+            <h4 class="ds-color-section-title">Warning Colors</h4>
+            <div class="ds-color-row">
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--warning-50);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">warning-50</span>
+                  <span class="ds-color-value">#fffbeb</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--warning-500);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">warning-500</span>
+                  <span class="ds-color-value">#f59e0b</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--warning-700);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">warning-700</span>
+                  <span class="ds-color-value">#b45309</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-color-section">
+            <h4 class="ds-color-section-title">Error Colors</h4>
+            <div class="ds-color-row">
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--error-50);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">error-50</span>
+                  <span class="ds-color-value">#fef2f2</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--error-500);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">error-500</span>
+                  <span class="ds-color-value">#ef4444</span>
+                </div>
+              </div>
+              <div class="ds-color-item">
+                <div class="ds-color-swatch" style="background: var(--error-700);"></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-name">error-700</span>
+                  <span class="ds-color-value">#b91c1c</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semantic Colors -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Semantic Colors</h3>
+
+          <div class="ds-semantic-grid">
+            <!-- Text Colors -->
+            <div class="ds-semantic-group">
+              <h4 class="ds-semantic-title">Text Colors</h4>
+              <div class="ds-semantic-row">
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-dark);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-dark</span>
+                    <span class="ds-color-reference">→ neutral-900</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-default);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-default</span>
+                    <span class="ds-color-reference">→ neutral-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-light);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-light</span>
+                    <span class="ds-color-reference">→ neutral-500</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-brand);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-brand</span>
+                    <span class="ds-color-reference">→ brand-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small ds-color-swatch--bordered"
+                    style="background: var(--txt-white);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-white</span>
+                    <span class="ds-color-reference">→ #ffffff</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-success);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-success</span>
+                    <span class="ds-color-reference">→ success-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-error);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-error</span>
+                    <span class="ds-color-reference">→ error-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-warning);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-warning</span>
+                    <span class="ds-color-reference">→ warning-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--txt-disable);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">txt-disable</span>
+                    <span class="ds-color-reference">→ neutral-400</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Background Colors -->
+            <div class="ds-semantic-group">
+              <h4 class="ds-semantic-title">Background Colors</h4>
+              <div class="ds-semantic-row">
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small ds-color-swatch--bordered"
+                    style="background: var(--bg-default);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-default</span>
+                    <span class="ds-color-reference">→ #ffffff</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bg-brand);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-brand</span>
+                    <span class="ds-color-reference">→ brand-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small ds-color-swatch--bordered"
+                    style="background: var(--bg-light);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-light</span>
+                    <span class="ds-color-reference">→ neutral-50</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bg-success);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-success</span>
+                    <span class="ds-color-reference">→ success-100</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small ds-color-swatch--bordered"
+                    style="background: var(--bg-white);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-white</span>
+                    <span class="ds-color-reference">→ #ffffff</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bg-brand-light);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-brand-light</span>
+                    <span class="ds-color-reference">→ brand-50</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bg-warning);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-warning</span>
+                    <span class="ds-color-reference">→ warning-100</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bg-error);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bg-error</span>
+                    <span class="ds-color-reference">→ error-100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Border Colors -->
+            <div class="ds-semantic-group">
+              <h4 class="ds-semantic-title">Border Colors</h4>
+              <div class="ds-semantic-row">
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-default);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-default</span>
+                    <span class="ds-color-reference">→ neutral-400</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-light);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-light</span>
+                    <span class="ds-color-reference">→ neutral-300</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-brand);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-brand</span>
+                    <span class="ds-color-reference">→ brand-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-success);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-success</span>
+                    <span class="ds-color-reference">→ success-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-error);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-error</span>
+                    <span class="ds-color-reference">→ error-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small" style="background: var(--bd-warning);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-warning</span>
+                    <span class="ds-color-reference">→ warning-700</span>
+                  </div>
+                </div>
+                <div class="ds-semantic-item">
+                  <div class="ds-color-swatch ds-color-swatch--small ds-color-swatch--bordered"
+                    style="background: var(--bd-white);"></div>
+                  <div class="ds-semantic-info">
+                    <span class="ds-color-name">bd-white</span>
+                    <span class="ds-color-reference">→ #ffffff</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section id="typography" class="ds-section ds-section--alt">
+      <div class="ds-container">
+        <h2 class="ds-section-title">Typography</h2>
+
+        <div class="ds-showcase">
+          <div class="ds-type-scale">
+            <div class="ds-type-item">
+              <h1 class="ds-type-example" style="font-size: var(--fs-h1); line-height: 1.1; margin: 0;">H1 Heading</h1>
+              <div class="ds-type-info">H1 • 72px • Bold</div>
+            </div>
+            <div class="ds-type-item">
+              <h2 class="ds-type-example" style="font-size: var(--fs-h2); line-height: 1.2; margin: 0;">H2 Heading</h2>
+              <div class="ds-type-info">H2 • 60px • Semibold</div>
+            </div>
+            <div class="ds-type-item">
+              <h3 class="ds-type-example" style="font-size: var(--fs-h3); line-height: 1.3; margin: 0;">H3 Heading</h3>
+              <div class="ds-type-info">H3 • 52px • Semibold</div>
+            </div>
+            <div class="ds-type-item">
+              <h4 class="ds-type-example" style="font-size: var(--fs-h4); line-height: 1.3; margin: 0;">H4 Heading</h4>
+              <div class="ds-type-info">H4 • 44px • Semibold</div>
+            </div>
+            <div class="ds-type-item">
+              <h5 class="ds-type-example" style="font-size: var(--fs-h5); line-height: 1.4; margin: 0;">H5 Heading</h5>
+              <div class="ds-type-info">H5 • 32px • Semibold</div>
+            </div>
+            <div class="ds-type-item">
+              <h6 class="ds-type-example" style="font-size: var(--fs-h6); line-height: 1.4; margin: 0;">H6 Heading</h6>
+              <div class="ds-type-info">H6 • 24px • Semibold</div>
+            </div>
+            <div class="ds-type-item">
+              <p class="ds-type-example" style="font-size: var(--fs-large); line-height: 1.5; margin: 0;">This is large
+                body text used for lead paragraphs and important content that needs more visual weight than regular
+                text.</p>
+              <div class="ds-type-info">Large • 20px • Regular</div>
+            </div>
+            <div class="ds-type-item">
+              <p class="ds-type-example" style="font-size: var(--fs-default); line-height: 1.6; margin: 0;">This is the
+                default body text used for paragraphs, descriptions, and regular content throughout the interface.</p>
+              <div class="ds-type-info">Body • 16px • Regular</div>
+            </div>
+            <div class="ds-type-item">
+              <p class="ds-type-example" style="font-size: var(--fs-small); line-height: 1.5; margin: 0;">This is small
+                body text used for captions, secondary information, and supporting details.</p>
+              <div class="ds-type-info">Small • 14px • Regular</div>
+            </div>
+            <div class="ds-type-item">
+              <p class="ds-type-example" style="font-size: var(--fs-caption); line-height: 1.4; margin: 0;">This is
+                caption text used for fine print, metadata, and auxiliary information.</p>
+              <div class="ds-type-info">Caption • 12px • Regular</div>
+            </div>
+            <div class="ds-type-item">
+              <p class="ds-type-example"
+                style="font-size: var(--fs-label); font-weight: var(--fw-bold); color: var(--txt-dark); letter-spacing: var(--ls-wide); text-transform: uppercase; margin: 0; display: block;">
+                Label Example</p>
+              <div class="ds-type-info">Label • 12px • Bold • Uppercase • Wide Spacing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section id="components" class="ds-section">
+      <div class="ds-container">
+        <h2 class="ds-section-title">Components</h2>
+
+        <!-- Buttons -->
+        <div class="ds-showcase">
+
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Button Variants</h4>
+            <div class="ds-component-demo">
+              <button type="button" class="btn btn--primary">Primary Button</button>
+              <button type="button" class="btn btn--tonal">Tonal Button</button>
+              <button type="button" class="btn btn--outline">Outline Button</button>
+              <button type="button" class="btn btn--link">Link Button</button>
+              <button type="button" class="btn btn--primary" disabled>Disabled</button>
+            </div>
+          </div>
+
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Button Sizes</h4>
+            <div class="ds-component-demo">
+              <button type="button" class="btn btn--primary btn--sm">Small</button>
+              <button type="button" class="btn btn--primary">Default</button>
+              <button type="button" class="btn btn--primary btn--lg">Large</button>
+            </div>
+          </div>
+
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Icon Buttons</h4>
+            <div class="ds-component-demo">
+              <button type="button" class="btn btn--primary btn--icon-only" title="Save">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8H216a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H48V120l80-80,80,80ZM165.66,133.66l-32,32a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L128,148.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z">
+                  </path>
+                </svg>
+              </button>
+              <button type="button" class="btn btn--outline btn--icon-only" title="Edit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96A16,16,0,0,0,227.31,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z">
+                  </path>
+                </svg>
+              </button>
+              <button type="button" class="btn btn--tonal btn--icon-only" title="Delete">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Elements -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Form Elements</h3>
+
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Input Sizes</h4>
+            <div class="ds-component-demo ds-component-demo--vertical">
+              <div class="ds-form-item">
+                <label class="label" for="demo-input-sm">Small Input</label>
+                <input type="text" id="demo-input-sm" class="input input--sm" placeholder="Small input field">
+              </div>
+              <div class="ds-form-item">
+                <label class="label" for="demo-input-default">Default Input</label>
+                <input type="text" id="demo-input-default" class="input" placeholder="Default input field">
+              </div>
+              <div class="ds-form-item">
+                <label class="label" for="demo-input-lg">Large Input</label>
+                <input type="text" id="demo-input-lg" class="input input--lg" placeholder="Large input field">
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Input States</h4>
+            <div class="ds-component-demo ds-component-demo--vertical">
+              <!-- Text Inputs -->
+              <div class="ds-form-item">
+                <label class="label" for="demo-input-1">Default Input</label>
+                <input type="text" id="demo-input-1" class="input" placeholder="Enter text here">
+              </div>
+              <div class="ds-form-item">
+                <label class="label label--required" for="demo-input-2">Required Input</label>
+                <input type="text" id="demo-input-2" class="input" placeholder="Required field">
+              </div>
+              <div class="ds-form-item">
+                <label class="label" for="demo-input-3">Error State</label>
+                <input type="text" id="demo-input-3" class="input input--error" value="invalid@email">
+                <div class="form-error">Please enter a valid email address</div>
+              </div>
+
+              <!-- Textarea -->
+              <div class="ds-form-item">
+                <label class="label" for="demo-textarea">Message</label>
+                <textarea id="demo-textarea" class="textarea" placeholder="Enter your message..." rows="4"></textarea>
+                <div class="form-help">Optional help text for additional guidance</div>
+              </div>
+
+              <!-- Select Dropdown -->
+              <div class="ds-form-item">
+                <label class="label" for="demo-select">Select Dropdown</label>
+                <select id="demo-select" class="select">
+                  <option>Choose an option</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+
+              <!-- Checkboxes -->
+              <div class="ds-form-item">
+                <label class="label">Checkboxes</label>
+                <div class="checkbox">
+                  <input type="checkbox" id="check-1" class="checkbox__input" checked>
+                  <label for="check-1" class="checkbox__label">Default checkbox</label>
+                </div>
+                <div class="checkbox checkbox--lg">
+                  <input type="checkbox" id="check-2" class="checkbox__input">
+                  <label for="check-2" class="checkbox__label">Large checkbox</label>
+                </div>
+              </div>
+
+              <!-- Radio Buttons -->
+              <div class="ds-form-item">
+                <label class="label">Radio Buttons</label>
+                <div class="radio-group">
+                  <div class="radio">
+                    <input type="radio" id="radio-1" name="demo-radio" class="radio__input" checked>
+                    <label for="radio-1" class="radio__label">Option 1</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" id="radio-2" name="demo-radio" class="radio__input">
+                    <label for="radio-2" class="radio__label">Option 2</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Multi-Step Form Components -->
+    <section id="multi-step-form" class="ds-section ds-section--alt">
+      <div class="ds-container">
+        <h2 class="ds-section-title">Multi-Step Form Components</h2>
+
+        <!-- Form Header -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Form Header with Progress</h3>
+          <div class="ds-component-demo" style="background: #f5f5ff; padding: 0;">
+            <div class="form-header" style="position: relative; margin-bottom: 0;">
+              <button class="form-header__back" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
+                </svg>
+              </button>
+              <div class="form-header__logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#1278f0" viewBox="0 0 256 256">
+                  <path d="M184,72H40a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V88H184a8,8,0,0,0,0-16Z"></path>
+                  <path d="M224,40H88a8,8,0,0,0-8,8V184a8,8,0,0,0,16,0V56H224a8,8,0,0,0,0-16Z"></path>
+                </svg>
+                Storywriter
+              </div>
+              <div class="form-header__progress">
+                <div class="form-header__progress-bar" style="width: 14.29%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Card Example -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Form Card - Step 1</h3>
+          <div class="ds-component-demo" style="background: #f5f5ff; padding: 2rem;">
+            <div class="form-card">
+              <div class="form-card__heading">
+                <div class="form-card__step">
+                  <svg class="form-card__step-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"></path>
+                  </svg>
+                  <span class="form-card__step-label">STEP 1</span>
+                </div>
+                <h2 class="form-card__title">Capturing Essential Details</h2>
+                <p class="form-card__description">These key details lay the foundation for your loved one's story.</p>
+              </div>
+
+              <div class="form-fields">
+                <!-- Full Name -->
+                <div class="form-field">
+                  <label class="form-field__label form-field__label--required" for="full-name">Full Name</label>
+                  <input type="text" id="full-name" class="form-field__input" placeholder="e.g, John Arthur Doe">
+                </div>
+
+                <!-- Preferred Name & Gender -->
+                <div class="form-field--row">
+                  <div class="form-field">
+                    <label class="form-field__label" for="preferred-name">Preferred Name</label>
+                    <input type="text" id="preferred-name" class="form-field__input" placeholder="Optional nickname (e.g, Jack)">
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label form-field__label--required" for="gender">Gender</label>
+                    <select id="gender" class="form-field__select">
+                      <option value="">Select gender...</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Date of Birth & Date of Passing -->
+                <div class="form-field--row">
+                  <div class="form-field">
+                    <label class="form-field__label form-field__label--required" for="dob">Date of Birth</label>
+                    <input type="date" id="dob" class="form-field__input" placeholder="dd/mm/yyyy">
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label form-field__label--required" for="dop">Date of Passing</label>
+                    <input type="date" id="dop" class="form-field__input" placeholder="dd/mm/yyyy">
+                  </div>
+                </div>
+
+                <!-- Place of Birth & Place of Passing -->
+                <div class="form-field--row">
+                  <div class="form-field">
+                    <label class="form-field__label" for="place-birth">Place of Birth</label>
+                    <input type="text" id="place-birth" class="form-field__input" placeholder="e.g, Houston, Texas">
+                  </div>
+                  <div class="form-field">
+                    <label class="form-field__label" for="place-passing">Place of Passing</label>
+                    <input type="text" id="place-passing" class="form-field__input" placeholder="e.g, at home in Chicago, IL">
+                  </div>
+                </div>
+
+                <!-- Cause of Passing -->
+                <div class="form-field">
+                  <label class="form-field__label" for="cause">Cause of Passing</label>
+                  <input type="text" id="cause" class="form-field__input" placeholder="e.g., After a long battle with cancer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Form Actions Bar</h3>
+          <div class="ds-component-demo" style="background: #f5f5ff; padding: 2rem; position: relative; height: 150px;">
+            <div class="form-actions" style="position: absolute;">
+              <button type="button" class="form-actions__back">Back</button>
+              <button type="button" class="form-actions__skip">Skip this step</button>
+              <button type="button" class="form-actions__next">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Variants for Forms -->
+        <div class="ds-showcase">
+          <h3 class="ds-showcase-title">Form Button Styles</h3>
+          <div class="ds-component-group">
+            <h4 class="ds-component-title">Primary & Secondary Buttons</h4>
+            <div class="ds-component-demo">
+              <button type="button" class="btn btn--secondary">Back</button>
+              <button type="button" class="btn btn--primary">Next</button>
+              <button type="button" class="btn btn--primary" disabled>Disabled</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="ds-footer">
+    <div class="ds-container">
+      <p class="ds-footer-text">Built with modern CSS and semantic HTML</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

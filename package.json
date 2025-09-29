@@ -1,0 +1,39 @@
+{
+  "name": "design-system-demo",
+  "version": "1.0.0",
+  "description": "A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "dev:https": "vite --https",
+    "dev:style": "vite --open /design-system.html",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "build:analyze": "vite build --mode analyze",
+    "preview": "vite preview",
+    "preview:https": "vite preview --https",
+    "clean": "rm -rf dist node_modules/.vite",
+    "theme": "node scripts/update-theme.js",
+    "dev:theme": "npm run theme && vite --open /design-system.html",
+    "build:theme": "npm run theme && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/judenns/design-system-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/judenns/design-system-demo/issues"
+  },
+  "homepage": "https://github.com/judenns/design-system-demo#readme",
+  "devDependencies": {
+    "vite": "^7.1.6"
+  }
+}

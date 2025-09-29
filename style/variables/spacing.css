@@ -1,0 +1,38 @@
+/* Design System Spacing */
+:root {
+  /* Spacing Scale */
+
+  /* Base spacing units */
+  --space-xs: 0.25rem;    /* 4px */
+  --space-sm: 0.5rem;     /* 8px */
+  --space-md: 0.75rem;    /* 12px */
+  --space-lg: 1rem;       /* 16px */
+  --space-xl: 1.5rem;     /* 24px */
+  --space-2xl: 2rem;      /* 32px */
+  --space-3xl: 3rem;      /* 48px */
+
+  /* Section spacing for larger layouts */
+  --section-space-default: 10rem;   /* 160px */
+  --section-space-lg: 10rem;        /* 160px */
+  --section-space-md: 7.5rem;       /* 120px */
+  --section-space-sm: 5rem;         /* 80px */
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Focus shadows */
+  --focus-ring: 0 0 0 2px var(--bd-default);
+  --focus-ring-brand: 0 0 0 3px var(--brand-100);
+  --focus-ring-error: 0 0 0 3px var(--error-100);
+}

@@ -1,0 +1,19 @@
+/* ===================
+   LAYOUT COMPONENTS
+   =================== */
+
+/* Container Layout */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container--narrow {
+  max-width: 960px;
+}
+
+.container--wide {
+  max-width: 1440px;
+}
+
