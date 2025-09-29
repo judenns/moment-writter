@@ -17,9 +17,34 @@ export default defineConfig({
     outDir: 'dist',       // Output directory
     assetsDir: 'assets',  // Assets directory inside dist
     sourcemap: false,     // No source maps for production
-    minify: 'esbuild',    // Use esbuild for faster minification
+    minify: 'terser',     // Use terser for better minification
+    terserOptions: {
+      compress: {
+        drop_console: true,    // Remove console.log in production
+        drop_debugger: true,   // Remove debugger statements
+        pure_funcs: ['console.log'] // Remove specific functions
+      }
+    },
+
+    // Asset optimization
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+
+    // CSS code splitting
+    cssCodeSplit: true,
+
     rollupOptions: {
-      // Configure rollup options as needed
+      output: {
+        // Asset naming for better caching
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+
+        // Manual chunks for better code splitting
+        manualChunks: {
+          // Add vendor chunks here when you have dependencies
+          // 'vendor': ['package-name']
+        }
+      }
     }
   },
 
