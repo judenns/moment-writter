@@ -509,10 +509,26 @@
           formState.data.step2.traits = [...selectedTraits, trait];
         }
 
-        // Re-render to update disabled states
-        renderStep(2);
+        // Optimized: Update only affected chips instead of full re-render
+        updateTraitChipsState();
       });
     }
+  }
+
+  function updateTraitChipsState() {
+    const selectedTraits = formState.data.step2.traits || [];
+    const chips = document.querySelectorAll('.trait-chip');
+
+    chips.forEach(chip => {
+      const trait = chip.getAttribute('data-trait');
+      const isSelected = selectedTraits.includes(trait);
+      const isDisabled = !isSelected && selectedTraits.length >= 5;
+
+      // Update classes
+      chip.classList.toggle('trait-chip--selected', isSelected);
+      chip.classList.toggle('trait-chip--disabled', isDisabled);
+      chip.disabled = isDisabled;
+    });
   }
 
   function initStep3Handlers() {

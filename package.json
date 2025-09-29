@@ -1,7 +1,7 @@
 {
-  "name": "design-system-demo",
+  "name": "moment-writter",
   "version": "1.0.0",
-  "description": "A clean, neutral design system built with modern web standards featuring Inter typography and strategic brand color usage.",
+  "description": "AI-powered obituary and memorial website creator using theme-configurable design system with Vite, vanilla web technologies, and Figma MCP integration.",
   "type": "module",
   "main": "index.js",
   "directories": {
@@ -24,15 +24,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/judenns/design-system-demo.git"
+    "url": "git+https://github.com/judenns/moment-writter.git"
   },
-  "keywords": [],
+  "keywords": ["obituary", "memorial", "ai", "design-system", "vite", "vanilla-js"],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/judenns/design-system-demo/issues"
+    "url": "https://github.com/judenns/moment-writter/issues"
   },
-  "homepage": "https://github.com/judenns/design-system-demo#readme",
+  "homepage": "https://github.com/judenns/moment-writter#readme",
   "devDependencies": {
     "vite": "^7.1.6"
   }

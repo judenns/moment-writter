@@ -1,10 +1,13 @@
-# CLAUDE.md - Modern Design System Configuration
+# CLAUDE.md - Moments Writer Project Configuration
 
 This file provides comprehensive guidance to Claude Code (claude.ai/code) when working with this repository.
 
 ## Project Overview
 
-**Moments Writer** - AI-powered obituary and memorial website creator using theme-configurable design system with Vite, vanilla web technologies, and Figma MCP integration.
+**Moments Writer** - AI-powered obituary and memorial website creator that applies a theme-configurable design system to create meaningful tributes. Built with Vite, vanilla web technologies, and Figma MCP integration.
+
+### What This Project Is
+This is a **purpose-built application** using a design system foundation to solve a specific problem: creating personalized, AI-enhanced obituaries and memorial websites. The design system is a **means to an end**, not the end product itself.
 
 ### Background
 Obituaries have remained largely unchanged for years and are often written without strong writing skills. With advancements in AI, we have a chance to disrupt and democratize the creation of exceptional obituaries and life stories, offering a more meaningful, personalized experience.
